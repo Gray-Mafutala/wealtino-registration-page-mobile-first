@@ -1,15 +1,22 @@
-/* || CSS Variables */
+/* || Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+
+/* || CSS Variables */
 :root {
-    --default-background-color: #fdfdfd;
-    --default-text-color: #333;
+    --default-text-color: #232532;
+    --clr-blue-light: #cfe7da;
+    --clr-salmon-light: #e4d5c2;
+    --font-fam-lora: 'Lora', serif;
+    --font-fam-open-sans: 'Open Sans', sans-serif;
 }
 
 
 /* || General Styles */
-
 body {
     color: var(--default-text-color);
-    background: var(--default-background-color);
+    background: var(--clr-blue-light);
     font-size: 16px;
+    font-family: var(--font-fam-open-sans);
 }
