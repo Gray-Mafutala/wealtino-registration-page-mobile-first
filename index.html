@@ -9,6 +9,13 @@
     </title>
     <link rel="stylesheet" href="/src/css/_reset.css" />
     <link rel="stylesheet" href="/src/css/_base.css" />
+
+    <!-- Boxicons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
@@ -17,34 +24,39 @@
         Wealtino
         <span>*</span>
       </h1>
-      <button class="menu-btn">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M12 18c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zm0-9c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zm0-9c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3z"
-          />
-        </svg>
+      <button class="menu-btn btn-icon">
+        <i class="bx bx-dots-vertical-rounded"></i>
       </button>
+      <div class="theme-switcher">
+        <button class="theme-blue-light active">
+          <i class="bx bxs-palette"></i>
+          Blue light
+        </button>
+        <button class="theme-salmon-light">
+          <i class="bx bxs-palette"></i>
+          Salmon light
+        </button>
+      </div>
     </header>
 
     <main>
       <h2 class="hero-title">Invest for your future family. Now.</h2>
-      <p>
+      <p class="overview">
         Great saving products are built often by pionners. The one who dare to
         push beyond limits.
       </p>
-      <button class="apply-now">Apply Now</button>
+      <button class="apply-now btn-black">Apply Now</button>
 
       <!-- || Registration Form (Sign-Up)-->
       <form class="registration-form">
-        <h2 class="title-form">Wealtino Sign Up</h2>
+        <button class="close-form-btn btn-icon">
+          <i class="bx bx-x"></i>
+        </button>
+
+        <h2 class="title-form">Sign Up</h2>
 
         <!-- To display a message to help the user fill in the inputs correctly -->
-        <p class="log-input"></p>
+        <p class="log-input">Kool</p>
 
         <!-- Full Name -->
         <label for="fullname">Full Name</label>
@@ -57,55 +69,59 @@
         />
 
         <!-- Email input -->
-        <label for="email">Email</label>
+        <label for="registration-email">Email</label>
         <input
           type="email"
           name=""
-          id="email"
+          id="registration-email"
           placeholder="e.g dimas@company.com"
           required
         />
 
         <!-- Password input -->
-        <label for="pwd">Password</label>
+        <label for="registration-pwd">Password</label>
         <input
           type="password"
           name=""
-          id="pwd"
+          id="registration-pwd"
           placeholder="Min. 8 chars with at least one number, one upper and lower case letter, and one special character."
           required
         />
 
         <!-- Continue Submit-Button -->
-        <input class="btn-submit" type="submit" value="Continue" />
+        <input class="btn-submit btn-black" type="submit" value="Continue" />
 
-        <p>
+        <p class="question-to-switch">
           Already had an account?
-          <span class="form-switcher">Login</span>
+          <button class="btn-to-switch">Login</button>
         </p>
       </form>
 
       <!-- || Login Form -->
       <form class="login-form">
-        <h2 class="title-form">Wealtino Login</h2>
+        <button class="close-form-btn btn-icon">
+          <i class="bx bx-x"></i>
+        </button>
+
+        <h2 class="title-form">Login</h2>
 
         <!-- To display a message to help the user fill in the inputs correctly -->
-        <p class="log-input"></p>
+        <p class="log-input">Log out</p>
 
         <!-- Email input -->
-        <label for="email">Email</label>
-        <input type="email" name="" id="email" required />
+        <label for="login-email">Email</label>
+        <input type="email" name="" id="login-email" required />
 
         <!-- Password input -->
-        <label for="pwd">Password</label>
-        <input type="password" name="" id="pwd" required />
+        <label for="login-pwd">Password</label>
+        <input type="password" name="" id="login-pwd" required />
 
         <!-- Get Started Submit-Button -->
-        <input class="btn-submit" type="submit" value="Get Started" />
+        <input class="btn-submit btn-black" type="submit" value="Get Started" />
 
-        <p>
+        <p class="question-to-switch">
           Don't have an account?
-          <span class="form-switcher">Sign up</span>
+          <button class="btn-to-switch">Sign Up</button>
         </p>
       </form>
 

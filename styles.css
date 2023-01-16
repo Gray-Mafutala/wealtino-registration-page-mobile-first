@@ -3,7 +3,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 24px 0;
+    padding: 16px 10px 0 24px;
 }
 
 #site-logo {
@@ -17,6 +17,52 @@ header {
     color: #ff773d;
 }
 
+/* theme switcher */
+.theme-switcher {
+    position: absolute;
+    right: 4px;
+    top: 68px;
+    background-color: var(--clr-white);
+    padding: 24px 16px 0px;
+    border-radius: 10px;
+    border: 1px solid var(--clr-black);
+
+
+    display: none;
+}
+
+.theme-switcher.active {
+    display: block;
+}
+
+.theme-switcher::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 5px;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 16px 20px 16px;
+    border-color: transparent transparent var(--clr-black) transparent;
+}
+
+.theme-switcher button {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+.theme-switcher button.active {
+    font-weight: 600;
+}
+
+.theme-switcher button i {
+    margin-right: 8px;
+}
+
+
 /* || Main */
 main {
     display: flex;
@@ -26,36 +72,46 @@ main {
     padding: 72px 24px 16px;
 }
 
+/* btn to close form */
+.close-form-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
 .hero-title {
     font-size: 2.2rem;
     letter-spacing: -2px;
     line-height: 1.6;
 }
 
-main p {
+.overview {
     font-size: 20px;
     line-height: 1.6;
     margin-top: 22px;
 }
 
-.apply-now {
-    padding: 18px 22px;
-    margin-top: 40px;
-    width: 172px;
+/* btn black */
+.btn-black {
+    color: var(--clr-white);
+    background-color: var(--clr-black);
+    border: 2px solid transparent;
+    transition: .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     font-size: 18px;
     font-weight: 500;
     text-align: center;
-
-    color: #eee;
-    background-color: #181520;
-    border: 2px solid transparent;
-    transition: .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.apply-now:is(:active, :hover) {
-    color: #181520;
-    background-color: #eee;
-    border: 2px solid #181520;
+.apply-now {
+    margin-top: 40px;
+    width: 172px;
+    padding: 18px 24px;
+}
+
+.btn-black:is(:active, :hover) {
+    color: var(--clr-black);
+    background-color: var(--clr-white);
+    border: 2px solid var(--clr-black);
 }
 
 /* || Forms styles */
@@ -63,11 +119,87 @@ main p {
 when clicking on the "apply-now" button */
 form {
     display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    margin: 0 auto;
+    padding: 24px 18px;
+
+    background-color: #fff;
 }
+
+/* To show form */
+form.active {
+    display: flex;
+}
+
+.title-form {
+    font-size: 2.4rem;
+    margin-bottom: 32px;
+    white-space: nowrap;
+}
+
+.log-input {
+    font-size: 18px;
+    color: #ff5c5c;
+    margin-bottom: 12px;
+}
+
+form label[for] {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+form input {
+    background-color: var(--clr-white);
+    padding: 18px 20px;
+    align-self: stretch;
+    font-weight: 500;
+    margin-bottom: 20px;
+    outline: none;
+    border: 2px solid transparent;
+    transition: .3s;
+}
+
+form input:focus {
+    border-color: var(--clr-black);
+}
+
+.btn-submit {
+    text-align: center;
+    background-color: var(--clr-black);
+}
+
+.question-to-switch {
+    align-self: stretch;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 12px;
+    font-weight: 500;
+}
+
+.btn-to-switch {
+    border-bottom: 1px solid var(--clr-black);
+    padding-bottom: 3px;
+    transition: .3s;
+}
+
+.btn-to-switch:hover {
+    border-bottom-color: transparent;
+}
+
 
 /* Outline image */
 .outline-img {
-    width: 280px;
+    width: 320px;
     height: auto;
     align-self: flex-end;
 }

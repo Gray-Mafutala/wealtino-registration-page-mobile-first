@@ -8,6 +8,8 @@
     --default-text-color: #232532;
     --clr-blue-light: #cfe7da;
     --clr-salmon-light: #e4d5c2;
+    --clr-black: #181520;
+    --clr-white: #f6f6f6;
     --font-fam-lora: 'Lora', serif;
     --font-fam-open-sans: 'Open Sans', sans-serif;
 }
@@ -19,4 +21,20 @@ body {
     background: var(--clr-blue-light);
     font-size: 16px;
     font-family: var(--font-fam-open-sans);
+}
+
+/* To not be able to scroll when displaying the form*/
+.body-fixed {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.background-salmon-theme {
+    background: var(--clr-salmon-light);
+}
+
+/* Apply to icons from Boxicons */
+.btn-icon {
+    font-size: 2rem;
+    line-height: 0;
 }
