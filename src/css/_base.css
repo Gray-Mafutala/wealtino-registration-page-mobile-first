@@ -21,6 +21,7 @@ body {
     background: var(--clr-blue-light);
     font-size: 16px;
     font-family: var(--font-fam-open-sans);
+    overflow-x: hidden;
 }
 
 /* To not be able to scroll when displaying the form*/

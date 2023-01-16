@@ -27,12 +27,16 @@ header {
     border-radius: 10px;
     border: 1px solid var(--clr-black);
 
+    /* To animate the display of div */
 
-    display: none;
+    display: block;
+    transform-origin: top right;
+    transform: scale(0);
+    transition: .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .theme-switcher.active {
-    display: block;
+    transform: scale(1);
 }
 
 .theme-switcher::after {
@@ -133,11 +137,16 @@ form {
     padding: 24px 18px;
 
     background-color: #fff;
+
+    /* To animate the display of form */
+    transform: scale(0);
+    display: flex;
+    transition: .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* To show form */
 form.active {
-    display: flex;
+    transform: scale(1);
 }
 
 .title-form {
@@ -199,7 +208,57 @@ form input:focus {
 
 /* Outline image */
 .outline-img {
-    width: 320px;
+    position: absolute;
+    right: 0;
+    bottom: -105px;
+    width: calc(20px + 20vw + 20vh);
+    min-width: 230px;
+    max-width: 470px;
     height: auto;
     align-self: flex-end;
+    z-index: -1;
+}
+
+
+/* || Responsive - Mobile First */
+@media screen and (min-width: 680px) {
+
+    /* Hide apply-now btn */
+    .apply-now {
+        display: none;
+    }
+
+    /* Displays the form directly */
+    form.last-displayed-form {
+        transform: scale(1);
+
+        position: relative;
+        width: 50%;
+        height: auto;
+        margin: 20px 0 0;
+    }
+
+    /* Hide close-form-btn */
+    .close-form-btn {
+        display: none;
+    }
+
+    /* To restore the scroll bars when displaying 
+    the form directly on a larger screen */
+    .body-fixed {
+        height: auto;
+        overflow-y: scroll;
+    }
+
+    .outline-img {
+        width: 50%;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+
+    .outline-img {
+        width: 46%;
+    }
 }
