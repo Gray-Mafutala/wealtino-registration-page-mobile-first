@@ -28,7 +28,6 @@ header {
     border: 1px solid var(--clr-black);
 
     /* To animate the display of div */
-
     display: block;
     transform-origin: top right;
     transform: scale(0);
@@ -93,6 +92,7 @@ main {
     font-size: 20px;
     line-height: 1.6;
     margin-top: 22px;
+    max-width: 500px;
 }
 
 /* btn black */
@@ -153,12 +153,6 @@ form.active {
     font-size: 2.4rem;
     margin-bottom: 32px;
     white-space: nowrap;
-}
-
-.log-input {
-    font-size: 18px;
-    color: #ff5c5c;
-    margin-bottom: 12px;
 }
 
 form label[for] {
@@ -252,6 +246,7 @@ form input:focus {
 
     .outline-img {
         width: 50%;
+        transform: translateY(48%);
     }
 }
 

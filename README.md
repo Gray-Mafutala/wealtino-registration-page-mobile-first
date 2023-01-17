@@ -1,6 +1,6 @@
 ## From Image design to code · HTML/CSS and JS
 
-### 🖈 Wealtino Registration Page · Mobile First
+### 🖈 Wealtino Registration Page · Responsive Mobile First
 
 ### 1. Source image design
 
@@ -10,11 +10,11 @@
 
 - **Mobile**
 
-  ![Mobile version after integration](/readme-img/mobile-screen.PNG)
+  ![Mobile version after integration](/readme-img/mobile-screen.png)
 
-- **Registration form on Mobile version**
+- **Registration and login form on the mobile version**
 
-  ![Registration form on mobile version](/readme-img/mobile-form.PNG)
+  ![Forms on the mobile version](/readme-img/registration-and-login-form.png)
 
 - **Desktop**
 

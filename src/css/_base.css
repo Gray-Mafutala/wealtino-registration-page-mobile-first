@@ -24,7 +24,7 @@ body {
     overflow-x: hidden;
 }
 
-/* To not be able to scroll when displaying the form*/
+/* To not be able to scroll when displaying the form */
 .body-fixed {
     height: 100vh;
     overflow-y: hidden;

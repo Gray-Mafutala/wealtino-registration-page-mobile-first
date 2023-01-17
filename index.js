@@ -19,10 +19,6 @@ const closeLoginFormBtn = document.querySelector('.login-form .close-form-btn');
 const showLogFormBtn = document.querySelector('.registration-form .btn-to-switch');
 const showRegFormBtn = document.querySelector('.login-form .btn-to-switch');
 
-// Paragraph to display a message to help the user fill in the inputs correctly
-const logMsgLoginForm = document.querySelector('.login-form .log-input');
-const logMsgRegistrationForm = document.querySelector('.registration-form .log-input');
-
 // ============= To show choose-theme-box and apply a theme
 menuBtn.addEventListener('click', () => {
     themeChooseBox.classList.toggle('active');
@@ -99,5 +95,6 @@ showLogFormBtn.addEventListener('click', () => {
 showRegFormBtn.addEventListener('click', () => {
     toShowRegistrationForm();
     lastActiveForm = 'registration';
-})
+});
+
 
