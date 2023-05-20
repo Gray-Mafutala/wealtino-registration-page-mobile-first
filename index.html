@@ -1,128 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Wealtino Registration Page Mobile First
+        Wealtino Registration Page Mobile First
     </title>
-    <link rel="stylesheet" href="/src/css/_reset.css" />
-    <link rel="stylesheet" href="/src/css/_base.css" />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/base.css" />
 
     <!-- Boxicons CDN -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+    <link rel="stylesheet" href="./src/css/styles.css" />
+</head>
 
-    <link rel="stylesheet" href="/styles.css" />
-  </head>
-  <body>
+<body>
     <header>
-      <h1 id="site-logo">
-        Wealtino
-        <span>*</span>
-      </h1>
-      <button class="menu-btn btn-icon">
-        <i class="bx bx-dots-vertical-rounded"></i>
-      </button>
-      <div class="theme-switcher">
-        <button class="theme-blue-light active">
-          <i class="bx bxs-palette"></i>
-          Blue light
+        <h1 id="site-logo">
+            Wealtino
+            <span>*</span>
+        </h1>
+        <button class="menu-btn btn-icon">
+            <i class="bx bx-dots-vertical-rounded"></i>
         </button>
-        <button class="theme-salmon-light">
-          <i class="bx bxs-palette"></i>
-          Salmon light
-        </button>
-      </div>
+        <div class="theme-switcher">
+            <button class="theme-blue-light active">
+                <i class="bx bxs-palette"></i>
+                Blue light
+            </button>
+            <button class="theme-salmon-light">
+                <i class="bx bxs-palette"></i>
+                Salmon light
+            </button>
+        </div>
     </header>
 
     <main>
-      <h2 class="hero-title">Invest for your future family. Now.</h2>
-      <p class="overview">
-        Great saving products are built often by pionners. The one who dare to
-        push beyond limits.
-      </p>
-      <button class="apply-now btn-black">Apply Now</button>
-
-      <!-- || Registration Form (Sign-Up)-->
-      <form class="registration-form last-displayed-form">
-        <button class="close-form-btn btn-icon">
-          <i class="bx bx-x"></i>
-        </button>
-
-        <h2 class="title-form">Sign Up</h2>
-
-        <!-- Full Name -->
-        <label for="fullname">Full Name</label>
-        <input
-          type="text"
-          name=""
-          id="fullname"
-          placeholder="e.g Tom Riddle"
-          required
-        />
-
-        <!-- Email input -->
-        <label for="registration-email">Email</label>
-        <input
-          type="email"
-          name=""
-          id="registration-email"
-          placeholder="e.g dimas@company.com"
-          required
-        />
-
-        <!-- Password input -->
-        <label for="registration-pwd">Password</label>
-        <input
-          type="password"
-          name=""
-          id="registration-pwd"
-          placeholder="Min. 8 chars with at least one number, one upper and lower case letter, and one special character."
-          required
-        />
-
-        <!-- Continue Submit-Button -->
-        <input class="btn-submit btn-black" type="submit" value="Continue" />
-
-        <p class="question-to-switch">
-          Already had an account?
-          <button class="btn-to-switch">Login</button>
+        <h2 class="hero-title">Invest for your future family. Now.</h2>
+        <p class="overview">
+            Great saving products are built often by pionners. The one who dare to
+            push beyond limits.
         </p>
-      </form>
+        <button class="apply-now btn-black">Apply Now</button>
 
-      <!-- || Login Form -->
-      <form class="login-form">
-        <button class="close-form-btn btn-icon">
-          <i class="bx bx-x"></i>
-        </button>
+        <!-- || Registration Form (Sign-Up)-->
+        <form class="registration-form last-displayed-form">
+            <button class="close-form-btn btn-icon">
+                <i class="bx bx-x"></i>
+            </button>
 
-        <h2 class="title-form">Login</h2>
+            <h2 class="title-form">Sign Up</h2>
 
-        <!-- Email input -->
-        <label for="login-email">Email</label>
-        <input type="email" name="" id="login-email" required />
+            <!-- Full Name -->
+            <label for="fullname">Full Name</label>
+            <input type="text" name="" id="fullname" placeholder="e.g Tom Riddle" required />
 
-        <!-- Password input -->
-        <label for="login-pwd">Password</label>
-        <input type="password" name="" id="login-pwd" required />
+            <!-- Email input -->
+            <label for="registration-email">Email</label>
+            <input type="email" name="" id="registration-email" placeholder="e.g dimas@company.com" required />
 
-        <!-- Get Started Submit-Button -->
-        <input class="btn-submit btn-black" type="submit" value="Get Started" />
+            <!-- Password input -->
+            <label for="registration-pwd">Password</label>
+            <input type="password" name="" id="registration-pwd"
+                placeholder="Min. 8 chars with at least one number, one upper and lower case letter, and one special character."
+                required />
 
-        <p class="question-to-switch">
-          Don't have an account?
-          <button class="btn-to-switch">Sign Up</button>
-        </p>
-      </form>
+            <!-- Continue Submit-Button -->
+            <input class="btn-submit btn-black" type="submit" value="Continue" />
 
-      <!-- Image des garçons en fond de page -->
-      <img src="/assets/img/young-mens.png" alt="" class="outline-img" />
+            <p class="question-to-switch">
+                Already had an account?
+                <button class="btn-to-switch">Login</button>
+            </p>
+        </form>
+
+        <!-- || Login Form -->
+        <form class="login-form">
+            <button class="close-form-btn btn-icon">
+                <i class="bx bx-x"></i>
+            </button>
+
+            <h2 class="title-form">Login</h2>
+
+            <!-- Email input -->
+            <label for="login-email">Email</label>
+            <input type="email" name="email" id="login-email" required />
+
+            <!-- Password input -->
+            <label for="login-pwd">Password</label>
+            <input type="password" name="password" id="login-pwd" required />
+
+            <!-- Get Started Submit-Button -->
+            <input class="btn-submit btn-black" type="submit" value="Get Started" />
+
+            <p class="question-to-switch">
+                Don't have an account?
+                <button class="btn-to-switch">Sign Up</button>
+            </p>
+        </form>
+
+        <!-- Image des garçons en fond de page -->
+        <img src="./assets/img/young-mens.png" alt="" class="outline-img" />
     </main>
 
-    <script src="/index.js"></script>
-  </body>
+    <script src="./index.js"></script>
+</body>
+
 </html>

@@ -23,7 +23,6 @@ header {
     right: 4px;
     top: 68px;
     background-color: var(--clr-white);
-    padding: 24px 16px 0px;
     border-radius: 10px;
     border: 1px solid var(--clr-black);
 
@@ -41,20 +40,21 @@ header {
 .theme-switcher::after {
     content: "";
     position: absolute;
-    top: -20px;
-    right: 5px;
+    top: -12px;
+    right: 13px;
     display: block;
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 16px 20px 16px;
+    border-width: 0 8px 12px 8px;
     border-color: transparent transparent var(--clr-black) transparent;
+    border-radius: 20px;
 }
 
 .theme-switcher button {
     display: block;
     font-size: 16px;
-    margin-bottom: 24px;
+    padding: 12px 16px;
 }
 
 .theme-switcher button.active {

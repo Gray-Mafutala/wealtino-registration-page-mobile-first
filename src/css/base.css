@@ -5,19 +5,19 @@
 
 /* || CSS Variables */
 :root {
-    --default-text-color: #232532;
+    --text-primary-clr: #232532;
+    --clr-white: #f6f6f6;
+    --clr-black: #181520;
     --clr-blue-light: #cfe7da;
     --clr-salmon-light: #e4d5c2;
-    --clr-black: #181520;
-    --clr-white: #f6f6f6;
+
     --font-fam-lora: 'Lora', serif;
     --font-fam-open-sans: 'Open Sans', sans-serif;
 }
 
-
 /* || General Styles */
 body {
-    color: var(--default-text-color);
+    color: var(--text-primary-clr);
     background: var(--clr-blue-light);
     font-size: 16px;
     font-family: var(--font-fam-open-sans);
