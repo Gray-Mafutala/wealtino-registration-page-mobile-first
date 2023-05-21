@@ -3,66 +3,127 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 10px 0 24px;
+    padding: 16px;
 }
 
+/* site logo */
 #site-logo {
+    display: flex;
     font-family: var(--font-fam-lora);
     font-weight: 500;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    user-select: none;
     white-space: nowrap;
+    transition: .3s cubic-bezier(0, 2.65, 0.96, 0.1);
 }
 
-#site-logo span {
+#site-logo::after {
+    content: "*";
     color: #ff773d;
+}
+
+#site-logo:hover {
+    letter-spacing: 2px;
+}
+
+/* menu btn */
+.menu-btn .bx {
+    font-size: 1.55rem;
+    color: var(--clr-blue-dark);
+    transition: .2s;
+}
+
+.menu-btn .bx:hover,
+.menu-btn:focus .bx {
+    color: #8172a9;
+    opacity: .8;
+    transform: skewX(-10deg);
 }
 
 /* theme switcher */
 .theme-switcher {
     position: absolute;
     right: 4px;
-    top: 68px;
-    background-color: var(--clr-white);
-    border-radius: 10px;
-    border: 1px solid var(--clr-black);
+    top: 58px;
+    padding: 4px;
+    background-color: #fff;
+    --theme-switcher-border-radius: 10px;
+    border-radius: var(--theme-switcher-border-radius);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
-    /* To animate the display of div */
+    /* To animate the display of theme-switcher */
     display: block;
     transform-origin: top right;
-    transform: scale(0);
-    transition: .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scaleY(0);
+    opacity: 0;
+    transition: transform .2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        opacity .1s;
+    z-index: 5;
 }
 
 .theme-switcher.active {
-    transform: scale(1);
+    display: block;
+    transform: scaleY(1);
+    opacity: 1;
 }
 
 .theme-switcher::after {
     content: "";
     position: absolute;
     top: -12px;
-    right: 13px;
+    right: 16px;
+    transform: skew(8deg);
     display: block;
     width: 0;
     height: 0;
     border-style: solid;
     border-width: 0 8px 12px 8px;
-    border-color: transparent transparent var(--clr-black) transparent;
+    border-color: transparent transparent var(--clr-gray-dark) transparent;
     border-radius: 20px;
 }
 
 .theme-switcher button {
     display: block;
-    font-size: 16px;
-    padding: 12px 16px;
+    font-size: .9rem;
+    padding: 12px 14px;
+    width: 100%;
+    text-align: left;
+    transition: .3s;
+}
+
+.theme-switcher button:hover {
+    color: var(--clr-gray-dark);
+}
+
+.theme-blue-light.active {
+    background-color: var(--bg-blue-light);
+    border-top-left-radius: var(--theme-switcher-border-radius);
+    border-top-right-radius: var(--theme-switcher-border-radius);
+}
+
+.theme-salmon-light.active {
+    background-color: var(--bg-salmon-light);
+    border-bottom-left-radius: var(--theme-switcher-border-radius);
+    border-bottom-right-radius: var(--theme-switcher-border-radius);
 }
 
 .theme-switcher button.active {
     font-weight: 600;
+    color: var(--clr-gray-dark);
 }
 
 .theme-switcher button i {
     margin-right: 8px;
+    transition: .3s;
+}
+
+.theme-switcher button:hover i {
+    transform: rotate(180deg);
+}
+
+.theme-switcher button.active i {
+    transform: rotate(180deg);
 }
 
 
@@ -72,7 +133,7 @@ main {
     flex-direction: column;
     align-items: flex-start;
 
-    padding: 72px 24px 16px;
+    padding: 48px 24px 16px;
 }
 
 /* btn to close form */
@@ -83,39 +144,41 @@ main {
 }
 
 .hero-title {
-    font-size: 2.2rem;
+    font-size: clamp(1.625rem, 5.342vw + 0.206rem, 3.625rem);
+    line-height: clamp(2.438rem, 6.077vw + 0.823rem, 4.713rem);
     letter-spacing: -2px;
+    word-spacing: 2px;
     line-height: 1.6;
 }
 
 .overview {
-    font-size: 20px;
+    font-size: clamp(1rem, 0.668vw + 0.823rem, 1.25rem);
+    line-height: clamp(1.5rem, 0.334vw + 1.411rem, 1.625rem);
     line-height: 1.6;
-    margin-top: 22px;
+    margin-top: 20px;
     max-width: 500px;
 }
 
 /* btn black */
 .btn-black {
-    color: var(--clr-white);
-    background-color: var(--clr-black);
+    color: var(--clr-white-off);
+    background-color: var(--clr-blue-dark);
     border: 2px solid transparent;
     transition: .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    font-size: 18px;
-    font-weight: 500;
+    font-size: .9rem;
+    font-weight: 600;
     text-align: center;
 }
 
 .apply-now {
-    margin-top: 40px;
-    width: 172px;
-    padding: 18px 24px;
+    margin-top: 36px;
+    padding: 12px 24px;
 }
 
 .btn-black:is(:active, :hover) {
-    color: var(--clr-black);
-    background-color: var(--clr-white);
-    border: 2px solid var(--clr-black);
+    color: var(--clr-blue-dark);
+    background-color: var(--clr-white-off);
+    border: 2px solid var(--clr-blue-dark);
 }
 
 /* || Forms styles */
@@ -162,8 +225,8 @@ form label[for] {
 }
 
 form input {
-    background-color: var(--clr-white);
-    padding: 18px 20px;
+    background-color: var(--clr-white-off);
+    padding: 14px 20px;
     align-self: stretch;
     font-weight: 500;
     margin-bottom: 20px;
@@ -173,12 +236,12 @@ form input {
 }
 
 form input:focus {
-    border-color: var(--clr-black);
+    border-color: var(--clr-blue-dark);
 }
 
 .btn-submit {
     text-align: center;
-    background-color: var(--clr-black);
+    background-color: var(--clr-blue-dark);
 }
 
 .question-to-switch {
@@ -190,7 +253,7 @@ form input:focus {
 }
 
 .btn-to-switch {
-    border-bottom: 1px solid var(--clr-black);
+    border-bottom: 1px solid var(--clr-blue-dark);
     padding-bottom: 3px;
     transition: .3s;
 }
@@ -215,6 +278,40 @@ form input:focus {
 
 
 /* || Responsive - Mobile First */
+@media screen and (min-width: 425px) {}
+
+@media screen and (min-width: 768px) {
+    #site-logo {
+        font-size: 1.4rem;
+    }
+
+    .menu-btn .bx {
+        display: none;
+    }
+
+    .theme-switcher {
+        display: flex;
+        position: static;
+        opacity: 1;
+        transform: none;
+    }
+
+    .theme-switcher::after {
+        content: none;
+    }
+
+    .theme-switcher button {
+        font-size: .96rem;
+        white-space: nowrap;
+        border-radius: var(--theme-switcher-border-radius);
+    }
+
+    .btn-black {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+}
+
 @media screen and (min-width: 680px) {
 
     /* Hide apply-now btn */

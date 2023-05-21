@@ -1,27 +1,51 @@
 /* || Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
 
 /* || CSS Variables */
 :root {
-    --text-primary-clr: #232532;
-    --clr-white: #f6f6f6;
-    --clr-black: #181520;
-    --clr-blue-light: #cfe7da;
-    --clr-salmon-light: #e4d5c2;
+    --text-primary: #232532;
+
+    --bg-blue-light: #cfe7da;
+    --bg-salmon-light: #e4d5c2;
+
+    --clr-white-off: #f6f6f6;
+    --clr-blue-dark: #181520;
+    --clr-gray-dark: #565656;
 
     --font-fam-lora: 'Lora', serif;
     --font-fam-open-sans: 'Open Sans', sans-serif;
 }
 
-/* || General Styles */
+
+/* || Basic rules */
 body {
-    color: var(--text-primary-clr);
-    background: var(--clr-blue-light);
+    color: var(--text-primary);
+    background: var(--bg-blue-light);
     font-size: 16px;
     font-family: var(--font-fam-open-sans);
     overflow-x: hidden;
+}
+
+/* Customize scrollbar */
+body::-webkit-scrollbar {
+    width: 20px;
+    background-color: var(--clr-white-off);
+    box-shadow: inset 0 0 6px var(--clr-gray-dark);
+    border-radius: 4px;
+    box-sizing: content-box;
+}
+
+body ::-webkit-scrollbar-track {
+    background-color: darkgrey;
+}
+
+body::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    box-shadow: inset 0 0 10px var(--clr-blue-dark);
+    background-color: var(--clr-white-off);
+    border-radius: 20px;
+    background-clip: content-box;
 }
 
 /* To not be able to scroll when displaying the form */
@@ -31,11 +55,15 @@ body {
 }
 
 .background-salmon-theme {
-    background: var(--clr-salmon-light);
+    background: var(--bg-salmon-light);
 }
 
-/* Apply to icons from Boxicons */
-.btn-icon {
-    font-size: 2rem;
-    line-height: 0;
+button {
+    text-align: center;
+    user-select: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
 }
