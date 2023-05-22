@@ -15,55 +15,64 @@
 
     --font-fam-lora: 'Lora', serif;
     --font-fam-open-sans: 'Open Sans', sans-serif;
+
+    scroll-behavior: smooth;
 }
 
 
 /* || Basic rules */
 body {
     color: var(--text-primary);
-    background: var(--bg-blue-light);
+    --bg-chosen-theme: var(--bg-blue-light);
+    background: var(--bg-chosen-theme);
+    background-image: url("../../assets/img/noise.svg");
+    background-attachment: fixed;
+
+    --clr-site-logo-star: #ff773d;
+
     font-size: 16px;
     font-family: var(--font-fam-open-sans);
-    overflow-x: hidden;
+}
+
+/* to apply salmon-theme */
+body.background-salmon-theme {
+    --bg-chosen-theme: var(--bg-salmon-light);
+    --clr-site-logo-star: #3d9dff;
 }
 
 /* Customize scrollbar */
 body::-webkit-scrollbar {
-    width: 20px;
-    background-color: var(--clr-white-off);
-    box-shadow: inset 0 0 6px var(--clr-gray-dark);
-    border-radius: 4px;
-    box-sizing: content-box;
+    width: 18px;
 }
 
-body ::-webkit-scrollbar-track {
-    background-color: darkgrey;
+body::-webkit-scrollbar-track {
+    background-color: var(--clr-white-off);
+    box-shadow: inset 0 0 6px var(--clr-gray-dark);
+    border-radius: 10px;
 }
 
 body::-webkit-scrollbar-thumb {
-    border: 2px solid transparent;
+    border: 0px solid transparent;
     box-shadow: inset 0 0 10px var(--clr-blue-dark);
-    background-color: var(--clr-white-off);
-    border-radius: 20px;
-    background-clip: content-box;
+    background-color: var(--bg-chosen-theme);
+    border-radius: 18px/28px;
 }
 
-/* To not be able to scroll when displaying the form */
-.body-fixed {
-    height: 100vh;
-    overflow-y: hidden;
+body::-webkit-scrollbar-thumb:hover {
+    box-shadow: inset 0 0 12px var(--clr-blue-dark)
 }
 
-.background-salmon-theme {
-    background: var(--bg-salmon-light);
+body::-webkit-scrollbar-thumb:active {
+    box-shadow: inset 0 0 15px var(--clr-blue-dark)
 }
 
-button {
-    text-align: center;
-    user-select: none;
+/* Customize text selection color */
+::-moz-selection {
+    color: var(--clr-white-off);
+    background: var(--clr-blue-dark);
 }
 
-img {
-    width: 100%;
-    height: auto;
+::selection {
+    color: var(--clr-white-off);
+    background: var(--clr-blue-dark);
 }

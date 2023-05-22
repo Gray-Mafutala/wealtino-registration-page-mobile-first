@@ -5,22 +5,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-        Wealtino - Home page
-    </title>
-    <link rel="stylesheet" href="./src/css/reset.css" />
-    <link rel="stylesheet" href="./src/css/base.css" />
+    <title>Wealtino · Responsive Mobile First</title>
 
+    <link rel="stylesheet" href="./src/css/reset.css" />
     <!-- Boxicons CDN -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+    <!-- Hint.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css" />
+    <link rel="stylesheet" href="./src/css/base.css" />
     <link rel="stylesheet" href="./src/css/styles.css" />
 </head>
 
 <body>
     <header>
-        <a href="#" id="site-logo">
-            Wealtino
-        </a>
+        <a href="#" id="site-logo"> Wealtino </a>
 
         <button class="menu-btn">
             <i class="bx bx-dots-vertical-rounded"></i>
@@ -38,71 +36,79 @@
     </header>
 
     <main>
-        <h2 class="hero-title">Invest for your future family. Now.</h2>
-        <p class="overview">
-            Great saving products are built often by pionners. The one who dare to
-            push beyond limits.
-        </p>
-        <button class="apply-now btn-black">Apply Now</button>
-
-        <!-- || Registration Form (Sign-Up)-->
-        <form class="registration-form last-displayed-form">
-            <button class="close-form-btn btn-icon">
-                <i class="bx bx-x"></i>
-            </button>
-
-            <h2 class="title-form">Sign Up</h2>
-
-            <!-- Full Name -->
-            <label for="fullname">Full Name</label>
-            <input type="text" name="" id="fullname" placeholder="e.g Tom Riddle" required />
-
-            <!-- Email input -->
-            <label for="registration-email">Email</label>
-            <input type="email" name="" id="registration-email" placeholder="e.g dimas@company.com" required />
-
-            <!-- Password input -->
-            <label for="registration-pwd">Password</label>
-            <input type="password" name="" id="registration-pwd"
-                placeholder="Min. 8 chars with at least one number, one upper and lower case letter, and one special character."
-                required />
-
-            <!-- Continue Submit-Button -->
-            <input class="btn-submit btn-black" type="submit" value="Continue" />
-
-            <p class="question-to-switch">
-                Already had an account?
-                <button class="btn-to-switch">Login</button>
+        <section class="overviews-wrapper">
+            <h2 class="hero-title">Invest for your future family. Now.</h2>
+            <p class="overview">
+                Great saving products are built often by pionners. The one who dare to
+                push beyond limits.
             </p>
-        </form>
+            <a href="#forms-wrapper" class="apply-now btn-black">Apply Now</a>
+        </section>
 
-        <!-- || Login Form -->
-        <form class="login-form">
-            <button class="close-form-btn btn-icon">
-                <i class="bx bx-x"></i>
-            </button>
+        <section id="forms-wrapper" class="forms-wrapper">
+            <!-- || Registration Form (Sign-Up)-->
+            <form class="registration-form active last-displayed-form">
+                <button type="button" class="close-form-btn btn-icon">
+                    <i class="bx bx-x"></i>
+                </button>
 
-            <h2 class="title-form">Login</h2>
+                <h2 class="title-form">Sign Up</h2>
 
-            <!-- Email input -->
-            <label for="login-email">Email</label>
-            <input type="email" name="email" id="login-email" required />
+                <!-- Full Name -->
+                <label for="fullname" class="hint--medium hint--right hint--rounded hint--always" data-hint="">Full
+                    Name</label>
+                <input type="text" name="fullname" id="fullname" placeholder="e.g Peter Pan" required />
 
-            <!-- Password input -->
-            <label for="login-pwd">Password</label>
-            <input type="password" name="password" id="login-pwd" required />
+                <!-- Email input -->
+                <label for="registration-email" class="hint--medium hint--right hint--rounded hint--always"
+                    data-hint="">Email</label>
+                <input type="email" name="email" id="registration-email" placeholder="e.g peterpan@mail.com" required />
 
-            <!-- Get Started Submit-Button -->
-            <input class="btn-submit btn-black" type="submit" value="Get Started" />
+                <!-- Password input -->
+                <label for="registration-pwd" class="hint--medium hint--right hint--rounded hint--always"
+                    data-hint="">Password</label>
+                <input type="password" name="password" id="registration-pwd" placeholder="Min. 8 characters..."
+                    required />
 
-            <p class="question-to-switch">
-                Don't have an account?
-                <button class="btn-to-switch">Sign Up</button>
-            </p>
-        </form>
+                <!-- Continue Submit-Button -->
+                <input class="btn-submit btn-black" type="submit" value="Get Started" />
 
-        <!-- Image des garçons en fond de page -->
-        <img src="./assets/img/young-mens.png" alt="" class="outline-img" />
+                <p class="question-to-switch">
+                    Already had an account?
+                    <button type="button" class="btn-to-switch">Login</button>
+                </p>
+            </form>
+
+            <!-- || Login Form -->
+            <form class="login-form">
+                <button type="button" class="close-form-btn btn-icon">
+                    <i class="bx bx-x"></i>
+                </button>
+
+                <h2 class="title-form">Login</h2>
+
+                <!-- Email input -->
+                <label for="login-email" class="hint--medium hint--right hint--rounded hint--always" data-hint="">
+                    Email
+                </label>
+                <input type="email" name="email" id="login-email" placeholder="Email" required />
+
+                <!-- Password input -->
+                <label for="login-pwd">Password</label>
+                <input type="password" name="password" id="login-pwd" placeholder="Password" required />
+
+                <!-- Get Started Submit-Button -->
+                <input class="btn-submit btn-black" type="submit" value="Login" />
+
+                <p class="question-to-switch">
+                    Don't have an account?
+                    <button type="button" class="btn-to-switch">Sign Up</button>
+                </p>
+            </form>
+
+            <!-- hero-image -->
+            <img class="hero-img" src="./assets/img/young-mens.png" alt="" />
+        </section>
     </main>
 
     <script src="./index.js"></script>

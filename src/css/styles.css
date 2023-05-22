@@ -1,9 +1,33 @@
+/* Image at bottom of page */
+body {
+    --bg-img-url: url("../../assets/img/young-mens.png");
+}
+
+body::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    background-image: var(--bg-img-url);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
+    height: clamp(12.5rem, 35.714vw + 5.357rem, 22.5rem);
+    width: clamp(12.5rem, 35.714vw + 5.357rem, 22.5rem);
+
+    z-index: -1;
+}
+
+
 /* || Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px;
+    padding: 16px clamp(1rem, 1.336vw + 0.645rem, 1.5rem);
 }
 
 /* site logo */
@@ -20,7 +44,7 @@ header {
 
 #site-logo::after {
     content: "*";
-    color: #ff773d;
+    color: var(--clr-site-logo-star);
 }
 
 #site-logo:hover {
@@ -86,6 +110,7 @@ header {
 .theme-switcher button {
     display: block;
     font-size: .9rem;
+    font-weight: 500;
     padding: 12px 14px;
     width: 100%;
     text-align: left;
@@ -133,7 +158,10 @@ main {
     flex-direction: column;
     align-items: flex-start;
 
-    padding: 48px 24px 16px;
+    padding: 48px clamp(1rem, 1.336vw + 0.645rem, 1.5rem) 16px;
+
+    /* font-size 16-18px */
+    --form-field-font-size: 1rem;
 }
 
 /* btn to close form */
@@ -143,18 +171,18 @@ main {
     top: 10px;
 }
 
+/* title */
 .hero-title {
     font-size: clamp(1.625rem, 5.342vw + 0.206rem, 3.625rem);
-    line-height: clamp(2.438rem, 6.077vw + 0.823rem, 4.713rem);
+    line-height: 1.4;
     letter-spacing: -2px;
     word-spacing: 2px;
-    line-height: 1.6;
 }
 
+/* paragraph overview */
 .overview {
-    font-size: clamp(1rem, 0.668vw + 0.823rem, 1.25rem);
-    line-height: clamp(1.5rem, 0.334vw + 1.411rem, 1.625rem);
-    line-height: 1.6;
+    font-size: clamp(1rem, 2.003vw + 0.468rem, 1.75rem);
+    line-height: 1.4;
     margin-top: 20px;
     max-width: 500px;
 }
@@ -165,14 +193,16 @@ main {
     background-color: var(--clr-blue-dark);
     border: 2px solid transparent;
     transition: .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    font-size: .9rem;
-    font-weight: 600;
+    font-size: var(--form-field-font-size);
+    font-weight: 500;
     text-align: center;
+    user-select: none;
 }
 
 .apply-now {
     margin-top: 36px;
     padding: 12px 24px;
+    display: inline-block;
 }
 
 .btn-black:is(:active, :hover) {
@@ -184,8 +214,17 @@ main {
 /* || Forms styles */
 /* The mobile version displays the formulas only 
 when clicking on the "apply-now" button */
-form {
+.close-form-btn .bx {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.hero-img {
     display: none;
+}
+
+form {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
@@ -197,38 +236,43 @@ form {
     height: 100vh;
 
     margin: 0 auto;
-    padding: 24px 18px;
+    padding: 24px clamp(1.125rem, 51.339vw - 9.143rem, 15.5rem);
 
     background-color: #fff;
 
-    /* To animate the display of form */
+    /* to hide form by default */
     transform: scale(0);
-    display: flex;
     transition: .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    z-index: 10;
 }
 
-/* To show form */
+/* To show active form */
 form.active {
     transform: scale(1);
 }
 
 .title-form {
-    font-size: 2.4rem;
+    font-size: clamp(1.375rem, 2.337vw + 0.754rem, 2.25rem);
+    line-height: clamp(2.063rem, 2.304vw + 1.451rem, 2.925rem);
+    font-weight: 600;
     margin-bottom: 32px;
     white-space: nowrap;
 }
 
 form label[for] {
-    font-size: 16px;
+    font-size: var(--form-field-font-size);
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 
 form input {
     background-color: var(--clr-white-off);
     padding: 14px 20px;
     align-self: stretch;
-    font-weight: 500;
+    font-size: var(--form-field-font-size);
+    font-weight: 400;
+    line-height: 1;
     margin-bottom: 20px;
     outline: none;
     border: 2px solid transparent;
@@ -239,21 +283,26 @@ form input:focus {
     border-color: var(--clr-blue-dark);
 }
 
+form input.invalid-value {
+    border-color: #f77373;
+}
+
 .btn-submit {
-    text-align: center;
     background-color: var(--clr-blue-dark);
 }
 
 .question-to-switch {
     align-self: stretch;
     text-align: center;
-    font-size: 18px;
+    font-size: var(--form-field-font-size);
     margin-top: 12px;
     font-weight: 500;
 }
 
 .btn-to-switch {
-    border-bottom: 1px solid var(--clr-blue-dark);
+    margin-left: 10px;
+    font-weight: 600;
+    border-bottom: 2px solid var(--clr-blue-dark);
     padding-bottom: 3px;
     transition: .3s;
 }
@@ -263,23 +312,7 @@ form input:focus {
 }
 
 
-/* Outline image */
-.outline-img {
-    position: absolute;
-    right: 0;
-    bottom: -105px;
-    width: calc(20px + 20vw + 20vh);
-    min-width: 230px;
-    max-width: 470px;
-    height: auto;
-    align-self: flex-end;
-    z-index: -1;
-}
-
-
 /* || Responsive - Mobile First */
-@media screen and (min-width: 425px) {}
-
 @media screen and (min-width: 768px) {
     #site-logo {
         font-size: 1.4rem;
@@ -306,51 +339,83 @@ form input:focus {
         border-radius: var(--theme-switcher-border-radius);
     }
 
-    .btn-black {
-        font-size: 1.1rem;
-        font-weight: 500;
-    }
-}
-
-@media screen and (min-width: 680px) {
-
-    /* Hide apply-now btn */
-    .apply-now {
-        display: none;
+    main {
+        --form-field-font-size: 1.125rem;
+        padding-top: clamp(1rem, 5.342vw + -0.419rem, 3rem);
     }
 
-    /* Displays the form directly */
-    form.last-displayed-form {
-        transform: scale(1);
-
-        position: relative;
-        width: 50%;
-        height: auto;
-        margin: 20px 0 0;
+    .title-form {
+        font-weight: 400;
     }
 
-    /* Hide close-form-btn */
+    /* redefine a different display for the form on tablet and PC screens */
     .close-form-btn {
         display: none;
     }
 
-    /* To restore the scroll bars when displaying 
-    the form directly on a larger screen */
-    .body-fixed {
-        height: auto;
-        overflow-y: scroll;
+    body {
+        --max-width: 860px;
     }
 
-    .outline-img {
+    body::after {
+        content: none;
+    }
+
+    header {
+        margin: 0 auto;
+        width: 100%;
+        max-width: var(--max-width);
+        padding: 16px clamp(0rem, -7.812vw + 5rem, 1.25rem);
+    }
+
+    .overviews-wrapper {
+        margin: 0 auto 3rem;
+        width: 100%;
+        max-width: var(--max-width);
+    }
+
+    .overview {
+        max-width: none;
+    }
+
+    .forms-wrapper {
+        display: flex;
+        margin: 0 auto;
+        width: 100%;
+        max-width: var(--max-width);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .hero-img {
+        display: block;
         width: 50%;
-        transform: translateY(48%);
+        max-height: 500px;
+        object-fit: contain;
+        align-self: flex-end;
     }
-}
 
+    form {
+        display: none;
+        transform: none;
+        position: static;
 
-@media screen and (min-width: 1024px) {
+        margin: 0;
+        padding: 16px 8%;
+        height: auto;
+        width: 50%;
 
-    .outline-img {
-        width: 46%;
+        background-color: #fff;
+
     }
+
+    form.active.default {
+        display: flex;
+        justify-content: center;
+    }
+
+    form.active {
+        display: flex;
+        justify-content: center;
+    }
+
 }
