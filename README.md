@@ -14,6 +14,7 @@
 ### 2. After integration
 
  - **Mobile**
+
 ![Mobile version after integration](/readme-img/mobile.png)
 
  - **Registration and login forms**
