@@ -8,17 +8,18 @@
 ---
 
 ### Overview
-### Source image design
-- ![Source image design](/readme-img/source.jpg)
+### 1. Source image design
+![Source image design](/readme-img/source.jpg)
 
-### After integration
- -  **Mobile**
-![Mobile version after integration](/readme-img/mobile-screen.png)
+### 2. After integration
+ - **Mobile**
+![Mobile version after integration](/readme-img/mobile.png)
 
- -  **Registration and login forms on the mobile screen**
- ![Forms on the mobile version](/readme-img/mobile-forms.png)
+ - **Registration and login forms**
+![Forms on the mobile version](/readme-img/mobile-forms.png)
 
- -  **Desktop**
-![Desktop version after integration](/readme-img/desktop-screen.PNG)
+ - **Desktop**
+![Desktop version after integration](/readme-img/desktop.PNG)
 
-- **Registration form on the desktop screen**![Desktop version after integration](/readme-img/desktop-form.PNG)
+- **Registration form**
+![Desktop version after integration](/readme-img/desktop-form.PNG)
