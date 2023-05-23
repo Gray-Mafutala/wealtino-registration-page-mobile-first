@@ -12,16 +12,14 @@
 ![Source image design](/readme-img/source.jpg)
 
 ### 2. After integration
-
- - **Mobile**
-
+#### Mobile
 ![Mobile version after integration](/readme-img/mobile.png)
 
- - **Registration and login forms**
+#### Registration and login forms
 ![Forms on the mobile version](/readme-img/mobile-forms.png)
 
- - **Desktop**
+#### Desktop
 ![Desktop version after integration](/readme-img/desktop.PNG)
 
-- **Registration form**
+#### Registration form
 ![Desktop version after integration](/readme-img/desktop-form.PNG)
