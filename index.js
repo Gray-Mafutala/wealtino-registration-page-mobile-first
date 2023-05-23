@@ -56,12 +56,14 @@ closeRegistrationFormBtn.addEventListener("click", () => {
     clearFormField(registrationForm.fullname);
     clearFormField(registrationForm.email);
     clearFormField(registrationForm.password);
+    document.body.classList.remove("fixed");
 });
 
 closeLoginFormBtn.addEventListener("click", () => {
     loginForm.classList.remove("active");
     loginForm.reset();
     clearFormField(loginForm.email);
+    document.body.classList.remove("fixed");
 });
 //================================================
 
@@ -75,6 +77,8 @@ const toShowLoginForm = () => {
 
     registrationForm.classList.remove("last-displayed-form");
     loginForm.classList.add("last-displayed-form");
+
+    document.body.classList.add("fixed");
 };
 const toShowRegistrationForm = () => {
     closeLoginFormBtn.click();
@@ -83,6 +87,8 @@ const toShowRegistrationForm = () => {
 
     loginForm.classList.remove("last-displayed-form");
     registrationForm.classList.add("last-displayed-form");
+
+    document.body.classList.add("fixed");
 };
 
 // to show registration or login form when clicking on "apply-now" btn
