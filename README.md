@@ -12,6 +12,7 @@
 ![Source image design](/readme-img/source.jpg)
 
 ### 2. After integration
+
  - **Mobile**
 ![Mobile version after integration](/readme-img/mobile.png)
 
